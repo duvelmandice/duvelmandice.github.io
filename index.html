@@ -16,19 +16,20 @@
         <title>Duvelman Dice</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta name="color-scheme" content="light only"/>
         <meta name="description" content="TTRPG Designer &amp; Map Illustrator"/>
         <meta property="og:site_name" content="Duvelman Dice"/>
         <meta property="og:title" content="Duvelman Dice"/>
         <meta property="og:type" content="website"/>
         <meta property="og:description" content="TTRPG Designer &amp; Map Illustrator"/>
-        <meta property="og:image" content="/assets/images/card.jpg"/>
+        <meta property="og:image" content="https://duvelmandice.github.io/assets/images/card.jpg?v=7d34b9f8"/>
         <meta property="og:image:type" content="image/jpeg"/>
         <meta property="og:image:width" content="1280"/>
         <meta property="og:image:height" content="800"/>
         <meta property="og:url" content="https://duvelmandice.github.io"/>
         <meta property="twitter:card" content="summary_large_image"/>
         <link rel="canonical" href="https://duvelmandice.github.io"/>
-        <link href="https://fonts.googleapis.com/css?display=swap&family=Alegreya:400,400italic,700,700italic%7CSource+Sans+Pro:200,200italic,400,400italic%7CEB+Garamond:400,400italic,700,700italic%7CAveria+Serif+Libre:400,400italic,300,300italic,700,700italic" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?display=swap&family=Alegreya:400,400italic,700,700italic%7CEB+Garamond:400,400italic,700,700italic%7CAveria+Serif+Libre:400,400italic,300,300italic,700,700italic" rel="stylesheet" type="text/css"/>
         <style>
             html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
                 margin: 0;
@@ -301,34 +302,179 @@
                 transition: none !important;
             }
 
-            @keyframes onvisible-slide-left {
-                0% {
-                    visibility: hidden;
-                    transform: translateX(100vw);
-                }
-
-                1% {
-                    visibility: visible;
-                }
-
-                100% {
-                    transform: translateX(0);
-                }
+            .icons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: var(--flex-alignment);
+                letter-spacing: 0;
+                padding: 0;
             }
 
-            @keyframes onvisible-slide-right {
-                0% {
-                    visibility: hidden;
-                    transform: translateX(-100vw);
-                }
+            .icons li {
+                position: relative;
+                z-index: 1;
+            }
 
-                1% {
-                    visibility: visible;
-                }
+            .icons li a {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
 
-                100% {
-                    transform: translateX(0);
-                }
+            .icons li a svg {
+                display: block;
+                position: relative;
+            }
+
+            .icons li a + svg {
+                display: block;
+                height: 100%;
+                left: 0;
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: -1;
+            }
+
+            .icons li a .label {
+                display: none;
+            }
+
+            #icons01 {
+                justify-content: center;
+                font-size: 0.875em;
+                gap: 1rem;
+            }
+
+            #icons01:not(:first-child) {
+                margin-top: 0.125rem !important;
+            }
+
+            #icons01:not(:last-child) {
+                margin-bottom: 0.125rem !important;
+            }
+
+            #icons01 li a {
+                height: 2em;
+                width: 2em;
+                transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+            }
+
+            #icons01 li a svg {
+                height: 50%;
+                width: 50%;
+                transition: fill 0.25s ease;
+            }
+
+            #icons01 a svg {
+                fill: #000000;
+            }
+
+            #icons01 a + svg {
+                fill: none;
+                stroke: #FFFFFF;
+                stroke-width: 1px;
+            }
+
+            #icons01 a:hover + svg {
+                stroke: #000000 !important;
+            }
+
+            #icons01 a:hover svg {
+                fill: #000000 !important;
+            }
+
+            #icons01 li a + svg {
+                transition: transform 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
+            }
+
+            #icons01 li a:hover {
+                transform: scale(1.2);
+            }
+
+            #icons01 li a:hover + svg {
+                transform: scale(1.2);
+            }
+
+            #icons01 .n01 svg {
+                fill: #E3E3E3;
+            }
+
+            #icons01 .n01 + svg {
+                stroke: #E3E3E3;
+            }
+
+            #icons01 .n01:hover + svg {
+                stroke: #E3E3E3 !important;
+            }
+
+            #icons01 .n01:hover svg {
+                fill: #E3E3E3 !important;
+            }
+
+            #icons01 .n02 svg {
+                fill: #E3E3E3;
+            }
+
+            #icons01 .n02 + svg {
+                stroke: #E3E3E3;
+            }
+
+            #icons01 .n02:hover + svg {
+                stroke: #E3E3E3 !important;
+            }
+
+            #icons01 .n02:hover svg {
+                fill: #E3E3E3 !important;
+            }
+
+            #icons01 .n03 svg {
+                fill: #E3E3E3;
+            }
+
+            #icons01 .n03 + svg {
+                stroke: #E3E3E3;
+            }
+
+            #icons01 .n03:hover + svg {
+                stroke: #E3E3E3 !important;
+            }
+
+            #icons01 .n03:hover svg {
+                fill: #E3E3E3 !important;
+            }
+
+            #icons01 .n04 svg {
+                fill: #E3E3E3;
+            }
+
+            #icons01 .n04 + svg {
+                stroke: #E3E3E3;
+            }
+
+            #icons01 .n04:hover + svg {
+                stroke: #E3E3E3 !important;
+            }
+
+            #icons01 .n04:hover svg {
+                fill: #E3E3E3 !important;
+            }
+
+            #icons01 .n05 svg {
+                fill: #E3E3E3;
+            }
+
+            #icons01 .n05 + svg {
+                stroke: #E3E3E3;
+            }
+
+            #icons01 .n05:hover + svg {
+                stroke: #E3E3E3 !important;
+            }
+
+            #icons01 .n05:hover svg {
+                fill: #E3E3E3 !important;
             }
 
             h1, h2, h3, p {
@@ -343,6 +489,14 @@
 
             h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 strong, h3 strong, p strong, h1 a, h2 a, h3 a, p a, h1 code, h2 code, h3 code, p code, h1 mark, h2 mark, h3 mark, p mark {
                 -webkit-text-fill-color: currentcolor;
+            }
+
+            #text01:not(:first-child) {
+                margin-top: 0rem !important;
+            }
+
+            #text01:not(:last-child) {
+                margin-bottom: 0rem !important;
             }
 
             #text01 {
@@ -369,15 +523,23 @@
                 margin-top: 1rem;
             }
 
+            #text02:not(:first-child) {
+                margin-top: 1rem !important;
+            }
+
+            #text02:not(:last-child) {
+                margin-bottom: 1rem !important;
+            }
+
             #text02 {
                 text-align: center;
                 color: rgba(255,255,255,0.761);
-                font-family: 'Source Sans Pro', sans-serif;
+                font-family: 'EB Garamond', serif;
                 letter-spacing: 0.05rem;
                 width: calc(100% + 0.05rem);
-                font-size: 1.5em;
-                line-height: 1.675;
-                font-weight: 200;
+                font-size: 1.25em;
+                line-height: 1.5;
+                font-weight: 400;
             }
 
             #text02 a {
@@ -389,6 +551,70 @@
             }
 
             #text02 span.p:nth-child(n + 2) {
+                margin-top: 1rem;
+            }
+
+            #text05:not(:first-child) {
+                margin-top: 0rem !important;
+            }
+
+            #text05:not(:last-child) {
+                margin-bottom: 0rem !important;
+            }
+
+            #text05 {
+                text-align: center;
+                font-variant: small-caps;
+                color: #FFFFFF;
+                font-family: 'EB Garamond', serif;
+                letter-spacing: 0.2rem;
+                width: calc(100% + 0.2rem);
+                font-size: 1.5em;
+                line-height: 1;
+                font-weight: 400;
+            }
+
+            #text05 a {
+                text-decoration: underline;
+            }
+
+            #text05 a:hover {
+                text-decoration: none;
+            }
+
+            #text05 span.p:nth-child(n + 2) {
+                margin-top: 1rem;
+            }
+
+            #text04:not(:first-child) {
+                margin-top: 0rem !important;
+            }
+
+            #text04:not(:last-child) {
+                margin-bottom: 0rem !important;
+            }
+
+            #text04 {
+                text-align: center;
+                font-variant: small-caps;
+                color: #FFFFFF;
+                font-family: 'EB Garamond', serif;
+                letter-spacing: 0.2rem;
+                width: calc(100% + 0.2rem);
+                font-size: 1.5em;
+                line-height: 1;
+                font-weight: 400;
+            }
+
+            #text04 a {
+                text-decoration: underline;
+            }
+
+            #text04 a:hover {
+                text-decoration: none;
+            }
+
+            #text04 span.p:nth-child(n + 2) {
                 margin-top: 1rem;
             }
 
@@ -461,213 +687,6 @@
                 margin-top: -1.5px;
             }
 
-            .icons {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: var(--flex-alignment);
-                letter-spacing: 0;
-                padding: 0;
-            }
-
-            .icons li {
-                position: relative;
-                z-index: 1;
-            }
-
-            .icons li a {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .icons li a svg {
-                display: block;
-                position: relative;
-            }
-
-            .icons li a + svg {
-                display: block;
-                height: 100%;
-                left: 0;
-                pointer-events: none;
-                position: absolute;
-                top: 0;
-                width: 100%;
-                z-index: -1;
-            }
-
-            .icons li a .label {
-                display: none;
-            }
-
-            #icons01 {
-                justify-content: center;
-                font-size: 1.75em;
-                gap: 0rem;
-            }
-
-            #icons01:not(:first-child) {
-                margin-top: 0rem !important;
-            }
-
-            #icons01:not(:last-child) {
-                margin-bottom: 0rem !important;
-            }
-
-            #icons01 li a {
-                height: 2em;
-                width: 2em;
-                transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
-            }
-
-            #icons01 li a svg {
-                height: 50%;
-                width: 50%;
-                transition: fill 0.25s ease;
-            }
-
-            #icons01 a svg {
-                fill: #000000;
-            }
-
-            #icons01 a + svg {
-                fill: none;
-                stroke: #FFFFFF;
-                stroke-width: 1px;
-            }
-
-            #icons01 a:hover + svg {
-                stroke: #000000 !important;
-            }
-
-            #icons01 a:hover svg {
-                fill: #000000 !important;
-            }
-
-            #icons01 li a + svg {
-                transition: transform 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
-            }
-
-            #icons01 li a:hover {
-                transform: scale(1.2);
-            }
-
-            #icons01 li a:hover + svg {
-                transform: scale(1.2);
-            }
-
-            #icons01 .n01 svg {
-                fill: #1DA1F2;
-            }
-
-            #icons01 .n01 + svg {
-                stroke: #00609C;
-            }
-
-            #icons01 .n01:hover + svg {
-                stroke: #0F77B8 !important;
-            }
-
-            #icons01 .n01:hover svg {
-                fill: #0F77B8 !important;
-            }
-
-            #icons01 .n02 svg {
-                fill: #4267B2;
-            }
-
-            #icons01 .n02 + svg {
-                stroke: #4267B2;
-            }
-
-            #icons01 .n02:hover + svg {
-                stroke: #4267B2 !important;
-            }
-
-            #icons01 .n02:hover svg {
-                fill: #4267B2 !important;
-            }
-
-            #icons01 .n03 svg {
-                fill: #833AB4;
-            }
-
-            #icons01 .n03 + svg {
-                stroke: #5B51D8;
-            }
-
-            #icons01 .n03:hover + svg {
-                stroke: #C13584 !important;
-            }
-
-            #icons01 .n03:hover svg {
-                fill: #C13584 !important;
-            }
-
-            #icons01 .n04 svg {
-                fill: rgba(235,255,255,0.78);
-            }
-
-            #icons01 .n04 + svg {
-                stroke: rgba(252,192,192,0.741);
-            }
-
-            #icons01 .n04:hover + svg {
-                stroke: #A3FAFF !important;
-            }
-
-            #icons01 .n04:hover svg {
-                fill: #A3FAFF !important;
-            }
-
-            #icons01 .n05 svg {
-                fill: #E65C5C;
-            }
-
-            #icons01 .n05 + svg {
-                stroke: #E65C5C;
-            }
-
-            #icons01 .n05:hover + svg {
-                stroke: #FF9696 !important;
-            }
-
-            #icons01 .n05:hover svg {
-                fill: #FF9696 !important;
-            }
-
-            #icons01 .n06 svg {
-                fill: #FFFFFF;
-            }
-
-            #icons01 .n06 + svg {
-                stroke: #FFEDFF;
-            }
-
-            #icons01 .n06:hover + svg {
-                stroke: #F59FF1 !important;
-            }
-
-            #icons01 .n06:hover svg {
-                fill: #F59FF1 !important;
-            }
-
-            #icons01 .n07 svg {
-                fill: #7289D9;
-            }
-
-            #icons01 .n07 + svg {
-                stroke: #7289D9;
-            }
-
-            #icons01 .n07:hover + svg {
-                stroke: #3B5ED9 !important;
-            }
-
-            #icons01 .n07:hover svg {
-                fill: #3B5ED9 !important;
-            }
-
             .buttons {
                 cursor: default;
                 display: flex;
@@ -690,6 +709,142 @@
                 white-space: nowrap;
             }
 
+            #buttons04 {
+                justify-content: center;
+                gap: 0.75rem;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            #buttons04:not(:first-child) {
+                margin-top: 0.5rem !important;
+            }
+
+            #buttons04:not(:last-child) {
+                margin-bottom: 0.5rem !important;
+            }
+
+            #buttons04 li a {
+                display: inline-flex;
+                width: 24rem;
+                height: 3rem;
+                line-height: 3rem;
+                padding: 0 1.5rem;
+                vertical-align: middle;
+                font-family: 'EB Garamond', serif;
+                letter-spacing: 0.05rem;
+                padding-left: calc(0.05rem + 1.5rem);
+                font-size: 1.375em;
+                font-weight: 400;
+                border-radius: 1rem;
+                justify-content: flex-start;
+                transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+            }
+
+            #buttons04 li a svg {
+                display: block;
+                fill: #ADD8E6;
+                flex-grow: 0;
+                flex-shrink: 0;
+                height: 100%;
+                min-width: 16px;
+                width: 2em;
+                margin-left: -0.125em;
+                margin-right: calc(0.5em + 0.05rem);
+                transition: fill 0.25s ease;
+            }
+
+            #buttons04 li a .label {
+                direction: var(--site-language-direction);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                flex-grow: 1;
+                flex-shrink: 1;
+                text-align: right;
+                width: 100%;
+            }
+
+            #buttons04 .button {
+                background-color: #2A424A;
+                color: #ADD8E6;
+                background-image: linear-gradient(45deg, rgba(0,0,0,0.412) 0%, rgba(42,66,74,0.008) 100%);
+                background-position: 0% 0%;
+                background-repeat: repeat;
+                background-size: cover;
+            }
+
+            #buttons04 .button svg {
+                fill: #ADD8E6;
+            }
+
+            #buttons02 {
+                justify-content: center;
+                gap: 0.75rem;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            #buttons02:not(:first-child) {
+                margin-top: 0rem !important;
+            }
+
+            #buttons02:not(:last-child) {
+                margin-bottom: 0rem !important;
+            }
+
+            #buttons02 li a {
+                display: inline-flex;
+                width: 24rem;
+                height: 3rem;
+                line-height: 3rem;
+                padding: 0 1.5rem;
+                vertical-align: middle;
+                font-family: 'EB Garamond', serif;
+                letter-spacing: 0.05rem;
+                padding-left: calc(0.05rem + 1.5rem);
+                font-size: 1.375em;
+                font-weight: 400;
+                border-radius: 1rem;
+                justify-content: flex-start;
+                transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+            }
+
+            #buttons02 li a svg {
+                display: block;
+                fill: #D1EDC7;
+                flex-grow: 0;
+                flex-shrink: 0;
+                height: 100%;
+                min-width: 16px;
+                width: 2em;
+                margin-left: -0.125em;
+                margin-right: calc(0.5em + 0.05rem);
+                transition: fill 0.25s ease;
+            }
+
+            #buttons02 li a .label {
+                direction: var(--site-language-direction);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                flex-grow: 1;
+                flex-shrink: 1;
+                text-align: right;
+                width: 100%;
+            }
+
+            #buttons02 .button {
+                background-color: #472947;
+                color: #D1EDC7;
+                background-image: linear-gradient(45deg, rgba(0,0,0,0.412) 0%, rgba(71,41,71,0.008) 100%);
+                background-position: 0% 0%;
+                background-repeat: repeat;
+                background-size: cover;
+            }
+
+            #buttons02 .button svg {
+                fill: #D1EDC7;
+            }
+
             #buttons03 {
                 justify-content: center;
                 gap: 0.75rem;
@@ -710,7 +865,8 @@
                 font-size: 1.375em;
                 font-weight: 400;
                 border-radius: 2.5rem;
-                transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+                justify-content: flex-start;
+                transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
             }
 
             #buttons03 li a svg {
@@ -720,7 +876,7 @@
                 flex-shrink: 0;
                 height: 100%;
                 min-width: 16px;
-                width: 1em;
+                width: 2em;
                 margin-left: -0.125em;
                 margin-right: calc(0.5em + 0.05rem);
                 transition: fill 0.25s ease;
@@ -730,79 +886,23 @@
                 direction: var(--site-language-direction);
                 overflow: hidden;
                 text-overflow: ellipsis;
+                flex-grow: 1;
+                flex-shrink: 1;
+                text-align: right;
+                width: 100%;
             }
 
             #buttons03 .button {
                 color: #FFFFFF;
-                border: solid 3px #787878;
+                border: solid 3px rgba(255,255,255,0.4);
             }
 
             #buttons03 .button svg {
-                fill: #FF0000;
+                fill: #B33E3E;
             }
 
-            #buttons03 .n01 {
-                border: solid 3px rgba(161,161,161,0.58);
-            }
-
-            #buttons03 .n01:hover {
-                border-color: #ED3939 !important;
-                color: #ED3939 !important;
-            }
-
-            #buttons03 .n01:hover svg {
-                fill: #ED3939 !important;
-            }
-
-            #buttons02 {
-                justify-content: center;
-                gap: 0.75rem;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            #buttons02 li a {
-                display: inline-flex;
-                width: auto;
-                height: 2.5rem;
-                line-height: 2.5rem;
-                padding: 0 1.25rem;
-                vertical-align: middle;
-                font-family: 'EB Garamond', serif;
-                letter-spacing: 0.05rem;
-                padding-left: calc(0.05rem + 1.25rem);
-                font-size: 1.375em;
-                font-weight: 400;
-                border-radius: 2.5rem;
-                transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
-            }
-
-            #buttons02 li a svg {
-                display: block;
-                fill: #FFFFFF;
-                flex-grow: 0;
-                flex-shrink: 0;
-                height: 100%;
-                min-width: 16px;
-                width: 1em;
-                margin-left: -0.125em;
-                margin-right: calc(0.5em + 0.05rem);
-                transition: fill 0.25s ease;
-            }
-
-            #buttons02 li a .label {
-                direction: var(--site-language-direction);
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            #buttons02 .button {
-                color: #FFFFFF;
-                border: solid 3px #787878;
-            }
-
-            #buttons02 .button svg {
-                fill: #FF0000;
+            #buttons03 li a:hover {
+                transform: scale(1.1125);
             }
 
             #buttons01 {
@@ -908,7 +1008,7 @@
             }
 
             #container01:not(:first-child) {
-                margin-top: 0rem !important;
+                margin-top: 0.5rem !important;
             }
 
             #container01:not(:last-child) {
@@ -918,7 +1018,7 @@
             #container01 > .wrapper {
                 display: block;
                 margin: 0 auto 0 auto;
-                width: 20rem;
+                width: 24rem;
                 background-attachment: scroll;
                 background-color: #141313;
                 border-color: rgba(0,0,0,0.561);
@@ -926,7 +1026,7 @@
                 border-width: 2px;
                 box-shadow: 0rem 0rem 0rem 0rem #000000;
                 border-radius: 1rem;
-                background-image: radial-gradient(62% 84% at 50% 50%, rgba(42,110,0,0.102) 79%, rgba(23,11,0,0.58) 100%), url('assets/images/container01.png?v=ed744796');
+                background-image: radial-gradient(62% 84% at 50% 50%, rgba(42,110,0,0.102) 79%, rgba(23,11,0,0.58) 100%), url('assets/images/container01.png');
                 background-position: 0% 0%, center;
                 background-repeat: repeat, repeat;
                 background-size: cover, contain;
@@ -934,7 +1034,7 @@
 
             #container01 > .wrapper > .inner {
                 --gutters: 2rem;
-                --padding-horizontal: 0.25rem;
+                --padding-horizontal: 0.375rem;
                 --padding-vertical: 0.25rem;
                 padding: var(--padding-vertical) var(--padding-horizontal);
                 border-radius: calc(1rem - 2px);
@@ -1178,6 +1278,27 @@
                     --spacing: 1.375rem;
                 }
 
+                #icons01 {
+                    font-size: 0.875em;
+                    gap: 1rem;
+                }
+
+                #icons01:not(:first-child) {
+                    margin-top: 0.09375rem !important;
+                }
+
+                #icons01:not(:last-child) {
+                    margin-bottom: 0.09375rem !important;
+                }
+
+                #text01:not(:first-child) {
+                    margin-top: 0rem !important;
+                }
+
+                #text01:not(:last-child) {
+                    margin-bottom: 0rem !important;
+                }
+
                 #text01 {
                     letter-spacing: 0.175rem;
                     width: calc(100% + 0.175rem);
@@ -1185,11 +1306,49 @@
                     line-height: 1.175;
                 }
 
+                #text02:not(:first-child) {
+                    margin-top: 0.75rem !important;
+                }
+
+                #text02:not(:last-child) {
+                    margin-bottom: 0.75rem !important;
+                }
+
                 #text02 {
                     letter-spacing: 0.04375rem;
                     width: calc(100% + 0.04375rem);
+                    font-size: 1.25em;
+                    line-height: 1.5;
+                }
+
+                #text05:not(:first-child) {
+                    margin-top: 0rem !important;
+                }
+
+                #text05:not(:last-child) {
+                    margin-bottom: 0rem !important;
+                }
+
+                #text05 {
+                    letter-spacing: 0.175rem;
+                    width: calc(100% + 0.175rem);
                     font-size: 1.5em;
-                    line-height: 1.675;
+                    line-height: 1;
+                }
+
+                #text04:not(:first-child) {
+                    margin-top: 0rem !important;
+                }
+
+                #text04:not(:last-child) {
+                    margin-bottom: 0rem !important;
+                }
+
+                #text04 {
+                    letter-spacing: 0.175rem;
+                    width: calc(100% + 0.175rem);
+                    font-size: 1.5em;
+                    line-height: 1;
                 }
 
                 #text03 {
@@ -1223,17 +1382,48 @@
                     width: 28rem;
                 }
 
-                #icons01 {
-                    font-size: 1.75em;
-                    gap: 0rem;
+                #buttons04 {
+                    gap: 0.75rem;
                 }
 
-                #icons01:not(:first-child) {
+                #buttons04:not(:first-child) {
+                    margin-top: 0.375rem !important;
+                }
+
+                #buttons04:not(:last-child) {
+                    margin-bottom: 0.375rem !important;
+                }
+
+                #buttons04 li a {
+                    letter-spacing: 0.05rem;
+                    padding-left: calc(0.05rem + 1.5rem);
+                    font-size: 1.375em;
+                }
+
+                #buttons04 li a svg {
+                    width: 2em;
+                }
+
+                #buttons02 {
+                    gap: 0.75rem;
+                }
+
+                #buttons02:not(:first-child) {
                     margin-top: 0rem !important;
                 }
 
-                #icons01:not(:last-child) {
+                #buttons02:not(:last-child) {
                     margin-bottom: 0rem !important;
+                }
+
+                #buttons02 li a {
+                    letter-spacing: 0.05rem;
+                    padding-left: calc(0.05rem + 1.5rem);
+                    font-size: 1.375em;
+                }
+
+                #buttons02 li a svg {
+                    width: 2em;
                 }
 
                 #buttons03 {
@@ -1247,21 +1437,7 @@
                 }
 
                 #buttons03 li a svg {
-                    width: 1em;
-                }
-
-                #buttons02 {
-                    gap: 0.75rem;
-                }
-
-                #buttons02 li a {
-                    letter-spacing: 0.05rem;
-                    padding-left: calc(0.05rem + 1.25rem);
-                    font-size: 1.375em;
-                }
-
-                #buttons02 li a svg {
-                    width: 1em;
+                    width: 2em;
                 }
 
                 #buttons01 {
@@ -1279,7 +1455,7 @@
                 }
 
                 #container01:not(:first-child) {
-                    margin-top: 0rem !important;
+                    margin-top: 0.375rem !important;
                 }
 
                 #container01:not(:last-child) {
@@ -1288,7 +1464,7 @@
 
                 #container01 > .wrapper > .inner {
                     --gutters: 2rem;
-                    --padding-horizontal: 0.25rem;
+                    --padding-horizontal: 0.375rem;
                     --padding-vertical: 0.25rem;
                 }
 
@@ -1382,12 +1558,12 @@
                     --spacing: 1.203125rem;
                 }
 
-                #buttons03 {
+                #buttons04 {
                     flex-direction: column;
                     flex-wrap: nowrap;
                 }
 
-                #buttons03 li a {
+                #buttons04 li a {
                     max-width: 32rem;
                     width: 100%;
                 }
@@ -1398,6 +1574,16 @@
                 }
 
                 #buttons02 li a {
+                    max-width: 32rem;
+                    width: 100%;
+                }
+
+                #buttons03 {
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                }
+
+                #buttons03 li a {
                     max-width: 32rem;
                     width: 100%;
                 }
@@ -1420,11 +1606,23 @@
                     --spacing: 1.03125rem;
                 }
 
+                #icons01 {
+                    gap: 0.75rem;
+                }
+
                 #text01 {
                     font-size: 2em;
                 }
 
                 #text02 {
+                    font-size: 1.25em;
+                }
+
+                #text05 {
+                    font-size: 1.5em;
+                }
+
+                #text04 {
                     font-size: 1.5em;
                 }
 
@@ -1432,15 +1630,15 @@
                     font-size: 1.5em;
                 }
 
-                #icons01 {
-                    gap: 0rem;
-                }
-
-                #buttons03 {
+                #buttons04 {
                     gap: 0.5625rem;
                 }
 
                 #buttons02 {
+                    gap: 0.5625rem;
+                }
+
+                #buttons03 {
                     gap: 0.5625rem;
                 }
 
@@ -1450,7 +1648,7 @@
 
                 #container01 > .wrapper > .inner {
                     --gutters: 1.5rem;
-                    --padding-horizontal: 0.1875rem;
+                    --padding-horizontal: 0.28125rem;
                     --padding-vertical: 0.1875rem;
                 }
             }
@@ -1480,6 +1678,12 @@
     </head>
     <body class="is-loading">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" display="none" width="0" height="0">
+            <symbol id="icon-694b338299bf630d8d2ec9bd42d31dbe" viewBox="0 0 40 40">
+                <path d="M36.1,11.7v5c-3.3,0-6.3-1-8.8-2.8v12.9c0,6.5-5.2,11.7-11.7,11.7c-2.4,0-4.6-0.7-6.5-2c0,0,0,0,0,0 c-3.1-2.1-5.2-5.7-5.2-9.7c0-6.5,5.2-11.7,11.7-11.7c0.5,0,1.1,0,1.6,0.1v1.4c0,0,0,0,0,0v5c-0.5-0.2-1.1-0.3-1.6-0.3 c-2.9,0-5.3,2.4-5.3,5.4c0,2.1,1.2,3.9,2.9,4.8c0.7,0.4,1.5,0.6,2.4,0.6c2.9,0,5.3-2.4,5.3-5.3V1.5h6.3v0.8c0,0.2,0.1,0.5,0.1,0.7 c0.4,2.5,1.9,4.7,4,6c0,0,0.1,0.1,0.1,0.1c0,0-0.1-0.1-0.1-0.1c1.4,0.9,3,1.3,4.7,1.3V11.7"/>
+            </symbol>
+            <symbol id="icon-3b7eeeccbb457780f277fce4669f67a0" viewBox="0 0 40 40">
+                <path d="M33.2,8.3c-2.5-1.1-5.1-1.9-7.9-2.4c-0.3,0.6-0.7,1.4-1,2c-2.9-0.4-5.8-0.4-8.7,0c-0.3-0.6-0.7-1.4-1-2 c-2.8,0.5-5.4,1.3-7.9,2.4c-5,7.2-6.3,14.2-5.6,21.1c3.3,2.3,6.5,3.8,9.6,4.7c0.8-1,1.5-2.1,2.1-3.3c-1.1-0.4-2.2-0.9-3.2-1.5 c0.3-0.2,0.5-0.4,0.8-0.6c6.3,2.8,13,2.8,19.2,0c0.3,0.2,0.5,0.4,0.8,0.6c-1,0.6-2.1,1.1-3.2,1.5c0.6,1.1,1.3,2.2,2.1,3.3 c3.1-0.9,6.3-2.4,9.6-4.7C39.7,21.4,37.5,14.4,33.2,8.3z M13.7,25.1c-1.9,0-3.4-1.7-3.4-3.7s1.5-3.7,3.4-3.7c1.9,0,3.5,1.7,3.4,3.7 C17.1,23.4,15.6,25.1,13.7,25.1z M26.3,25.1c-1.9,0-3.4-1.7-3.4-3.7s1.5-3.7,3.4-3.7c1.9,0,3.5,1.7,3.4,3.7 C29.7,23.4,28.2,25.1,26.3,25.1z"/>
+            </symbol>
             <symbol id="icon-0c4db87eff374f0f1ef47f8f043f0132" viewBox="0 0 40 40">
                 <path d="M36.3,10.2c-1,1.3-2.1,2.5-3.4,3.5c0,0.2,0,0.4,0,1c0,1.7-0.2,3.6-0.9,5.3c-0.6,1.7-1.2,3.5-2.4,5.1 c-1.1,1.5-2.3,3.1-3.7,4.3c-1.4,1.2-3.3,2.3-5.3,3c-2.1,0.8-4.2,1.2-6.6,1.2c-3.6,0-7-1-10.2-3c0.4,0,1.1,0.1,1.5,0.1 c3.1,0,5.9-1,8.2-2.9c-1.4,0-2.7-0.4-3.8-1.3c-1.2-1-1.9-2-2.2-3.3c0.4,0.1,1,0.1,1.2,0.1c0.6,0,1.2-0.1,1.7-0.2 c-1.4-0.3-2.7-1.1-3.7-2.3s-1.4-2.6-1.4-4.2v-0.1c1,0.6,2,0.9,3,0.9c-1-0.6-1.5-1.3-2.2-2.4c-0.6-1-0.9-2.1-0.9-3.3s0.3-2.3,1-3.4 c1.5,2.1,3.6,3.6,6,4.9s4.9,2,7.6,2.1c-0.1-0.6-0.1-1.1-0.1-1.4c0-1.8,0.8-3.5,2-4.7c1.2-1.2,2.9-2,4.7-2c2,0,3.6,0.8,4.8,2.1 c1.4-0.3,2.9-0.9,4.2-1.5c-0.4,1.5-1.4,2.7-2.9,3.6C33.8,11.2,35.1,10.9,36.3,10.2L36.3,10.2z"/>
             </symbol>
@@ -1491,20 +1695,14 @@
                 <path d="M20,11.9c-4.5,0-8.1,3.7-8.1,8.1s3.7,8.1,8.1,8.1s8.1-3.7,8.1-8.1S24.5,11.9,20,11.9z M20,25.2c-2.9,0-5.2-2.3-5.2-5.2 s2.3-5.2,5.2-5.2s5.2,2.3,5.2,5.2S22.9,25.2,20,25.2z"/>
                 <path d="M30.6,11.6c0,1-0.8,1.9-1.9,1.9c-1,0-1.9-0.8-1.9-1.9s0.8-1.9,1.9-1.9C29.8,9.7,30.6,10.5,30.6,11.6z"/>
             </symbol>
-            <symbol id="icon-694b338299bf630d8d2ec9bd42d31dbe" viewBox="0 0 40 40">
-                <path d="M36.1,11.7v5c-3.3,0-6.3-1-8.8-2.8v12.9c0,6.5-5.2,11.7-11.7,11.7c-2.4,0-4.6-0.7-6.5-2c0,0,0,0,0,0 c-3.1-2.1-5.2-5.7-5.2-9.7c0-6.5,5.2-11.7,11.7-11.7c0.5,0,1.1,0,1.6,0.1v1.4c0,0,0,0,0,0v5c-0.5-0.2-1.1-0.3-1.6-0.3 c-2.9,0-5.3,2.4-5.3,5.4c0,2.1,1.2,3.9,2.9,4.8c0.7,0.4,1.5,0.6,2.4,0.6c2.9,0,5.3-2.4,5.3-5.3V1.5h6.3v0.8c0,0.2,0.1,0.5,0.1,0.7 c0.4,2.5,1.9,4.7,4,6c0,0,0.1,0.1,0.1,0.1c0,0-0.1-0.1-0.1-0.1c1.4,0.9,3,1.3,4.7,1.3V11.7"/>
+            <symbol id="icon-cab3e1ab9074c89250b59903d6fe6af3" viewBox="0 0 40 40">
+                <path d="M4.9,11.7v17.5L20,37.9l15.2-8.8V11.7L20,2.9L4.9,11.7z"/>
+            </symbol>
+            <symbol id="icon-8c4b37645de3c276d895d87df51ba614" viewBox="0 0 40 40">
+                <path d="M36,20.3c0,3.5-1,6.6-3.1,9.4c-2,2.8-4.7,4.7-7.9,5.8c-0.4,0.1-0.6,0-0.8-0.1c-0.2-0.2-0.3-0.4-0.3-0.6v-4.4 c0-1.3-0.4-2.3-1.1-3c0.8-0.1,1.5-0.2,2.1-0.4c0.6-0.2,1.3-0.4,2-0.8c0.7-0.4,1.2-0.8,1.7-1.4c0.5-0.5,0.8-1.3,1.1-2.2 s0.4-2,0.4-3.1c0-1.7-0.5-3.1-1.6-4.3c0.5-1.3,0.5-2.7-0.2-4.2c-0.4-0.1-1,0-1.7,0.2c-0.7,0.3-1.4,0.6-1.9,0.9L24,12.5 c-1.3-0.4-2.6-0.5-4-0.5s-2.7,0.2-4,0.5c-0.2-0.2-0.5-0.3-0.9-0.6c-0.4-0.2-0.9-0.5-1.7-0.8c-0.8-0.3-1.4-0.4-1.8-0.3 c-0.6,1.6-0.7,3-0.1,4.2c-1.1,1.2-1.6,2.6-1.6,4.3c0,1.2,0.1,2.2,0.4,3.1s0.6,1.6,1.1,2.2s1,1,1.7,1.4c0.7,0.4,1.3,0.6,2,0.8 c0.6,0.2,1.3,0.3,2.1,0.4c-0.6,0.5-0.9,1.2-1,2.1c-0.3,0.1-0.6,0.2-0.9,0.3c-0.3,0.1-0.7,0.1-1.2,0.1c-0.5,0-0.9-0.1-1.4-0.4 c-0.5-0.3-0.8-0.7-1.2-1.3c-0.3-0.4-0.6-0.8-1-1.1c-0.4-0.3-0.8-0.4-1-0.5L9,26.5c-0.3,0-0.5,0-0.6,0.1c-0.1,0.1-0.1,0.1-0.1,0.2 c0,0.1,0.1,0.2,0.2,0.3c0.1,0.1,0.2,0.2,0.3,0.2l0.1,0.1c0.3,0.1,0.6,0.4,0.9,0.8s0.5,0.7,0.7,1.1l0.2,0.5c0.2,0.5,0.5,1,0.9,1.3 c0.4,0.3,0.9,0.5,1.4,0.6c0.5,0.1,1,0.1,1.4,0.1c0.5,0,0.9,0,1.2-0.1l0.5-0.1c0,0.5,0,1.1,0,1.9c0,0.7,0,1.1,0,1.1 c0,0.2-0.1,0.5-0.3,0.6c-0.2,0.2-0.5,0.2-0.8,0.1c-3.2-1.1-5.8-3-7.9-5.8S4,23.8,4,20.3c0-2.9,0.7-5.6,2.1-8S9.5,7.8,12,6.4 s5.1-2.1,8-2.1s5.6,0.7,8,2.1s4.4,3.4,5.8,5.8S36,17.4,36,20.3L36,20.3z"/>
             </symbol>
             <symbol id="icon-6536e5d96796f3054d00a52bf9a56f57" viewBox="0 0 40 40">
                 <path d="M35.9,31.9c-2.8,0-5.8-2.5-7.2-5.8H11.3c-1.4,3.3-4.4,5.8-7.2,5.8c-3.2,0-4.8-3.3-3.8-7.2l2.6-9.5 c1.1-4,4.5-7.2,7.7-7.2c2,0,3.4,1.3,3.9,3.2h11c0.5-2,1.9-3.2,3.9-3.2c3.2,0,6.6,3.3,7.7,7.2l2.6,9.5C40.7,28.7,39,31.9,35.9,31.9z M23.5,16.4l-3.7-4l-3.8,4l-3.7,4H16v4.1h7.3v-4.1h3.9L23.5,16.4z"/>
-            </symbol>
-            <symbol id="icon-1c13576468284a37278ea9bf6776a7f6" viewBox="0 0 40 40">
-                <path d="M34.4,23.1c-0.2,0.3-0.5,0.4-0.8,0.4L12.2,26c0.2,0.8,0.3,1.3,0.3,1.4c0,0.2-0.2,0.7-0.5,1.3h18.8 c0.4,0,0.7,0.1,0.9,0.4c0.3,0.3,0.4,0.6,0.4,0.9c0,0.4-0.1,0.7-0.4,0.9c-0.3,0.3-0.6,0.4-0.9,0.4h-1.3H11.2H9.9 c-0.4,0-0.7-0.1-0.9-0.4c-0.3-0.3-0.4-0.6-0.4-0.9c0-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.2-0.5,0.3-0.7c0.1-0.2,0.3-0.5,0.4-0.8 c0.2-0.3,0.3-0.5,0.3-0.6l-3.6-18H2c-0.4,0-0.7-0.1-0.9-0.4C0.8,8.7,0.7,8.4,0.7,8c0-0.4,0.1-0.7,0.4-0.9C1.3,6.8,1.6,6.7,2,6.7h5.2 c0.2,0,0.4,0,0.6,0.1C8,6.9,8.1,7,8.2,7.1c0.1,0.1,0.2,0.3,0.3,0.5C8.6,7.9,8.6,8,8.7,8.2c0,0.1,0.1,0.3,0.1,0.6 c0,0.3,0.1,0.4,0.1,0.5h24.6c0.4,0,0.7,0.1,0.9,0.4c0.3,0.3,0.4,0.6,0.4,0.9v11.6C34.8,22.5,34.6,22.8,34.4,23.1z M32.5,11.5 c-0.1-0.1-0.1-0.1-0.5-0.1c-3.6,0-22.7,0-22.7,0l2.4,12.2c0,0,17.4-1.9,20.5-2.2c0.3,0,0.2-0.1,0.3-0.2c0.1-0.1,0.1-0.1,0.1-0.4 c0-1.5,0-7.3,0-8.9C32.6,11.7,32.6,11.6,32.5,11.5z M31.4,32.2c0.5,0.5,0.8,1.1,0.8,1.9c0,0.7-0.3,1.3-0.8,1.9 c-0.5,0.5-1.1,0.8-1.8,0.8c-0.7,0-1.3-0.3-1.8-0.8c-0.5-0.5-0.8-1.1-0.8-1.9c0-0.7,0.3-1.3,0.8-1.9c0.5-0.5,1.1-0.8,1.8-0.8 C30.2,31.4,30.8,31.7,31.4,32.2z M13,32.2c0.5,0.5,0.8,1.1,0.8,1.9c0,0.7-0.3,1.3-0.8,1.9c-0.5,0.5-1.1,0.8-1.8,0.8 c-0.7,0-1.3-0.3-1.8-0.8c-0.5-0.5-0.8-1.1-0.8-1.9c0-0.7,0.3-1.3,0.8-1.9c0.5-0.5,1.1-0.8,1.8-0.8C11.9,31.4,12.5,31.7,13,32.2z"/>
-            </symbol>
-            <symbol id="icon-3b7eeeccbb457780f277fce4669f67a0" viewBox="0 0 40 40">
-                <path d="M33.2,8.3c-2.5-1.1-5.1-1.9-7.9-2.4c-0.3,0.6-0.7,1.4-1,2c-2.9-0.4-5.8-0.4-8.7,0c-0.3-0.6-0.7-1.4-1-2 c-2.8,0.5-5.4,1.3-7.9,2.4c-5,7.2-6.3,14.2-5.6,21.1c3.3,2.3,6.5,3.8,9.6,4.7c0.8-1,1.5-2.1,2.1-3.3c-1.1-0.4-2.2-0.9-3.2-1.5 c0.3-0.2,0.5-0.4,0.8-0.6c6.3,2.8,13,2.8,19.2,0c0.3,0.2,0.5,0.4,0.8,0.6c-1,0.6-2.1,1.1-3.2,1.5c0.6,1.1,1.3,2.2,2.1,3.3 c3.1-0.9,6.3-2.4,9.6-4.7C39.7,21.4,37.5,14.4,33.2,8.3z M13.7,25.1c-1.9,0-3.4-1.7-3.4-3.7s1.5-3.7,3.4-3.7c1.9,0,3.5,1.7,3.4,3.7 C17.1,23.4,15.6,25.1,13.7,25.1z M26.3,25.1c-1.9,0-3.4-1.7-3.4-3.7s1.5-3.7,3.4-3.7c1.9,0,3.5,1.7,3.4,3.7 C29.7,23.4,28.2,25.1,26.3,25.1z"/>
-            </symbol>
-            <symbol id="icon-cab3e1ab9074c89250b59903d6fe6af3" viewBox="0 0 40 40">
-                <polygon points="3.6,10.5 3.6,29.5 20,39 36.4,29.5 36.4,10.5 20,1" vector-effect="non-scaling-stroke"/>
             </symbol>
             <symbol id="icon-49c7b76f0edfabe10e324ba1ac396f84" viewBox="0 0 40 40">
                 <path d="M30.1,22.8c-0.1-0.1-0.3-0.2-0.5-0.2h-1.3c-0.2,0-0.3,0.1-0.5,0.2c-0.1,0.1-0.2,0.3-0.2,0.5v6.4c0,0.9-0.3,1.6-0.9,2.3 c-0.6,0.6-1.4,0.9-2.3,0.9H7.8c-0.9,0-1.6-0.3-2.3-0.9c-0.6-0.6-0.9-1.4-0.9-2.3V12.9c0-0.9,0.3-1.6,0.9-2.3C6.1,10,6.9,9.7,7.8,9.7 h14.1c0.2,0,0.3-0.1,0.5-0.2c0.1-0.1,0.2-0.3,0.2-0.5V7.8c0-0.2-0.1-0.3-0.2-0.5c-0.1-0.1-0.3-0.2-0.5-0.2H7.8c-1.6,0-3,0.6-4.1,1.7 S2,11.3,2,12.9v16.7c0,1.6,0.6,3,1.7,4.1c1.1,1.1,2.5,1.7,4.1,1.7h16.7c1.6,0,3-0.6,4.1-1.7c1.1-1.1,1.7-2.5,1.7-4.1v-6.4 C30.3,23,30.2,22.9,30.1,22.8z M37.6,5c-0.3-0.3-0.6-0.4-0.9-0.4H26.4c-0.3,0-0.6,0.1-0.9,0.4s-0.4,0.6-0.4,0.9s0.1,0.6,0.4,0.9 l3.5,3.5L16,23.4c-0.1,0.1-0.2,0.3-0.2,0.5s0.1,0.3,0.2,0.5l2.3,2.3c0.1,0.1,0.3,0.2,0.5,0.2c0.2,0,0.3-0.1,0.5-0.2l13.1-13.1 l3.5,3.5c0.3,0.3,0.6,0.4,0.9,0.4c0.3,0,0.6-0.1,0.9-0.4s0.4-0.6,0.4-0.9V5.9C38,5.5,37.9,5.2,37.6,5z"/>
@@ -1525,6 +1723,63 @@
         <div id="wrapper">
             <div id="main">
                 <div class="inner">
+                    <ul id="icons01" class="icons">
+                        <li>
+                            <a class="n01" href="https://www.tiktok.com/@duvelmandice" aria-label="TikTok">
+                                <svg>
+                                    <use xlink:href="#icon-694b338299bf630d8d2ec9bd42d31dbe"></use>
+                                </svg>
+                                <span class="label">TikTok</span>
+                            </a>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 40 40">
+                                <polygon points="3.6,10.5 3.6,29.5 20,39 36.4,29.5 36.4,10.5 20,1" vector-effect="non-scaling-stroke"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <a class="n02" href="https://discordapp.com/users/DuvelmanDice#4480" aria-label="Discord">
+                                <svg>
+                                    <use xlink:href="#icon-3b7eeeccbb457780f277fce4669f67a0"></use>
+                                </svg>
+                                <span class="label">Discord</span>
+                            </a>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 40 40">
+                                <polygon points="3.6,10.5 3.6,29.5 20,39 36.4,29.5 36.4,10.5 20,1" vector-effect="non-scaling-stroke"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <a class="n03" href="https://twitter.com/DuvelmanDice" aria-label="Twitter">
+                                <svg>
+                                    <use xlink:href="#icon-0c4db87eff374f0f1ef47f8f043f0132"></use>
+                                </svg>
+                                <span class="label">Twitter</span>
+                            </a>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 40 40">
+                                <polygon points="3.6,10.5 3.6,29.5 20,39 36.4,29.5 36.4,10.5 20,1" vector-effect="non-scaling-stroke"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <a class="n04" href="https://www.facebook.com/duvelmandice" aria-label="Facebook">
+                                <svg>
+                                    <use xlink:href="#icon-a1eb5cac0cee3b05a40d856c98ce14a5"></use>
+                                </svg>
+                                <span class="label">Facebook</span>
+                            </a>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 40 40">
+                                <polygon points="3.6,10.5 3.6,29.5 20,39 36.4,29.5 36.4,10.5 20,1" vector-effect="non-scaling-stroke"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <a class="n05" href="https://www.instagram.com/duvelmandice/" aria-label="Instagram">
+                                <svg>
+                                    <use xlink:href="#icon-85976685de3e4af37529a1ce5d57d2a7"></use>
+                                </svg>
+                                <span class="label">Instagram</span>
+                            </a>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 40 40">
+                                <polygon points="3.6,10.5 3.6,29.5 20,39 36.4,29.5 36.4,10.5 20,1" vector-effect="non-scaling-stroke"/>
+                            </svg>
+                        </li>
+                    </ul>
                     <h1 id="text01">Duvelman Dice</h1>
                     <p id="text02">
                         <span class="p">
@@ -1535,112 +1790,33 @@
                         </span>
                     </p>
                     <hr id="divider01">
-                    <ul id="icons01" class="icons">
+                    <p id="text05">Resources</p>
+                    <ul id="buttons04" class="buttons">
                         <li>
-                            <a class="n01" href="https://twitter.com/DuvelmanDice">
+                            <a href="https://duvelmandice.github.io/vault/" class="button n01">
                                 <svg>
-                                    <use xlink:href="#icon-0c4db87eff374f0f1ef47f8f043f0132"></use>
+                                    <use xlink:href="#icon-8c4b37645de3c276d895d87df51ba614"></use>
                                 </svg>
-                                <span class="label">Twitter</span>
-                            </a>
-                            <svg>
-                                <use xlink:href="#icon-cab3e1ab9074c89250b59903d6fe6af3"></use>
-                            </svg>
-                        </li>
-                        <li>
-                            <a class="n02" href="https://www.facebook.com/duvelmandice">
-                                <svg>
-                                    <use xlink:href="#icon-a1eb5cac0cee3b05a40d856c98ce14a5"></use>
-                                </svg>
-                                <span class="label">Facebook</span>
-                            </a>
-                            <svg>
-                                <use xlink:href="#icon-cab3e1ab9074c89250b59903d6fe6af3"></use>
-                            </svg>
-                        </li>
-                        <li>
-                            <a class="n03" href="https://www.instagram.com/duvelmandice/">
-                                <svg>
-                                    <use xlink:href="#icon-85976685de3e4af37529a1ce5d57d2a7"></use>
-                                </svg>
-                                <span class="label">Instagram</span>
-                            </a>
-                            <svg>
-                                <use xlink:href="#icon-cab3e1ab9074c89250b59903d6fe6af3"></use>
-                            </svg>
-                        </li>
-                        <li>
-                            <a class="n04" href="https://domain.ext/path">
-                                <svg>
-                                    <use xlink:href="#icon-694b338299bf630d8d2ec9bd42d31dbe"></use>
-                                </svg>
-                                <span class="label">TikTok</span>
-                            </a>
-                            <svg>
-                                <use xlink:href="#icon-cab3e1ab9074c89250b59903d6fe6af3"></use>
-                            </svg>
-                        </li>
-                        <li>
-                            <a class="n05" href="https://duvelmandice.itch.io/">
-                                <svg>
-                                    <use xlink:href="#icon-6536e5d96796f3054d00a52bf9a56f57"></use>
-                                </svg>
-                                <span class="label">Itch.io</span>
-                            </a>
-                            <svg>
-                                <use xlink:href="#icon-cab3e1ab9074c89250b59903d6fe6af3"></use>
-                            </svg>
-                        </li>
-                        <li>
-                            <a class="n06" href="https://www.exaltedfuneral.com/products/the-desiccated-temple-of-locha-pdf">
-                                <svg>
-                                    <use xlink:href="#icon-1c13576468284a37278ea9bf6776a7f6"></use>
-                                </svg>
-                                <span class="label">Cart (Alt)</span>
-                            </a>
-                            <svg>
-                                <use xlink:href="#icon-cab3e1ab9074c89250b59903d6fe6af3"></use>
-                            </svg>
-                        </li>
-                        <li>
-                            <a class="n07" href="https://domain.ext/path">
-                                <svg>
-                                    <use xlink:href="#icon-3b7eeeccbb457780f277fce4669f67a0"></use>
-                                </svg>
-                                <span class="label">Discord</span>
-                            </a>
-                            <svg>
-                                <use xlink:href="#icon-cab3e1ab9074c89250b59903d6fe6af3"></use>
-                            </svg>
-                        </li>
-                    </ul>
-                    <ul id="buttons03" class="buttons">
-                        <li>
-                            <a href="https://www.drivethrurpg.com/browse/pub/19044/Duvelman-Dice" class="button n01">
-                                <svg>
-                                    <use xlink:href="#icon-49c7b76f0edfabe10e324ba1ac396f84"></use>
-                                </svg>
-                                <span class="label">Drive-Thru RPG</span>
+                                <span class="label">#Dungeon23 Resources Vault</span>
                             </a>
                         </li>
                     </ul>
-                    <hr id="divider02">
                     <ul id="buttons02" class="buttons">
                         <li>
-                            <a href="https://itch.io/blog/462261/dungeon23-resources" class="button n01">
+                            <a href="https://duvelmandice.github.io/vault/" class="button n01">
                                 <svg>
-                                    <use xlink:href="#icon-6536e5d96796f3054d00a52bf9a56f57"></use>
+                                    <use xlink:href="#icon-8c4b37645de3c276d895d87df51ba614"></use>
                                 </svg>
-                                <span class="label">#Dungeon23 Resources List</span>
+                                <span class="label">The Cairn Hackening</span>
                             </a>
                         </li>
                     </ul>
                     <div id="container01" class="container default">
                         <div class="wrapper">
                             <div class="inner">
-                                <p id="text03">
+                                <h2 id="text03">
                                     <strong>10 Room Dungeon</strong>
-                                </p>
+                                </h2>
                                 <ul id="buttons01" class="buttons">
                                     <li>
                                         <a href="https://www.youtube.com/watch?v=2xjbKtmpoy8" class="button n01">
@@ -1678,6 +1854,34 @@
                             </div>
                         </div>
                     </div>
+                    <hr id="divider02">
+                    <p id="text04">Purchase</p>
+                    <ul id="buttons03" class="buttons">
+                        <li>
+                            <a href="https://duvelmandice.itch.io" class="button n01">
+                                <svg>
+                                    <use xlink:href="#icon-6536e5d96796f3054d00a52bf9a56f57"></use>
+                                </svg>
+                                <span class="label">Itch.io</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.drivethrurpg.com/browse/pub/19044/Duvelman-Dice" class="button n02">
+                                <svg>
+                                    <use xlink:href="#icon-49c7b76f0edfabe10e324ba1ac396f84"></use>
+                                </svg>
+                                <span class="label">Drive-Thru RPG</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://domain.ext/path" class="button n03">
+                                <svg>
+                                    <use xlink:href="#icon-49c7b76f0edfabe10e324ba1ac396f84"></use>
+                                </svg>
+                                <span class="label">Temple of Locha at Exalted Funeral</span>
+                            </a>
+                        </li>
+                    </ul>
                     <div id="credits" class="icc-credits">
                         <span>
                             <a href="https://carrd.co/build?ref=auto">Made with Carrd</a>
@@ -1729,7 +1933,7 @@
                     ], ['android', /Android ([0-9\.]+)/, null], ['mac', /Macintosh.+Mac OS X ([0-9_]+)/, function(v) {
                         return v.replace('_', '.').replace('_', '');
                     }
-                    ], ['windows', /Windows NT ([0-9\.]+)/, null], ['undefined', /Undefined/, null], ];
+                    ], ['windows', /Windows NT ([0-9\.]+)/, null], ['undefined', /Undefined/, null]];
                     for (i = 0; i < a.length; i++) {
                         if (ua.match(a[i][1])) {
                             o.os = a[i][0];
@@ -1928,9 +2132,11 @@
                 };
                 on('load', function() {
                     setTimeout(function() {
-                        $body.className = $body.className.replace(/\bis-loading\b/, 'is-playing');
+                        $body.classList.remove('is-loading');
+                        $body.classList.add('is-playing');
                         setTimeout(function() {
-                            $body.className = $body.className.replace(/\bis-playing\b/, 'is-ready');
+                            $body.classList.remove('is-playing');
+                            $body.classList.add('is-ready');
                         }, 5000);
                     }, 100);
                 });
@@ -1943,15 +2149,14 @@
                 if (client.mobile) {
                     (function() {
                         if (client.flags.lsdUnits) {
-                            document.documentElement.style.setProperty('--viewport-height', '100dvh');
-                            document.documentElement.style.setProperty('--background-height', '100lvh');
+                            document.documentElement.style.setProperty('--viewport-height', '100svh');
+                            document.documentElement.style.setProperty('--background-height', '100dvh');
                         } else {
                             var f = function() {
                                 document.documentElement.style.setProperty('--viewport-height', window.innerHeight + 'px');
                                 document.documentElement.style.setProperty('--background-height', (window.innerHeight + 250) + 'px');
                             };
                             on('load', f);
-                            on('resize', f);
                             on('orientationchange', function() {
                                 setTimeout(function() {
                                     (f)();
@@ -2028,8 +2233,17 @@
                             var bcr, elementTop, elementBottom, state, a, b;
                             if (!item.enter && !item.leave)
                                 return true;
-                            if (!item.triggerElement || item.triggerElement.offsetParent === null)
+                            if (!item.triggerElement)
                                 return true;
+                            if (item.triggerElement.offsetParent === null) {
+                                if (item.state == true && item.leave) {
+                                    item.state = false;
+                                    (item.leave).apply(item.element);
+                                    if (!item.enter)
+                                        item.leave = null;
+                                }
+                                return true;
+                            }
                             bcr = item.triggerElement.getBoundingClientRect();
                             elementTop = top + Math.floor(bcr.top);
                             elementBottom = elementTop + bcr.height;
@@ -2125,45 +2339,25 @@
                             },
                         },
                         'slide-left': {
-                            custom: true,
                             transition: function(speed, delay) {
-                                this.style.setProperty('--onvisible-speed', speed + 's');
-                                if (delay) {
-                                    this.style.transition = 'opacity 0s linear ' + delay + 's';
-                                    this.style.setProperty('--onvisible-delay', delay + 's');
-                                }
+                                return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                             },
                             rewind: function() {
-                                this.style.animation = 'none';
-                                this.style.opacity = 0;
+                                this.style.transform = 'translateX(100vw)';
                             },
                             play: function() {
-                                this.style.opacity = 1;
-                                this.style.animationName = 'onvisible-slide-left';
-                                this.style.animationTimingFunction = 'ease';
-                                this.style.animationDuration = 'var(--onvisible-speed)';
-                                this.style.animationDelay = 'var(--onvisible-delay)';
+                                this.style.transform = 'none';
                             },
                         },
                         'slide-right': {
-                            custom: true,
                             transition: function(speed, delay) {
-                                this.style.setProperty('--onvisible-speed', speed + 's');
-                                if (delay) {
-                                    this.style.transition = 'opacity 0s linear ' + delay + 's';
-                                    this.style.setProperty('--onvisible-delay', delay + 's');
-                                }
+                                return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                             },
                             rewind: function() {
-                                this.style.animation = 'none';
-                                this.style.opacity = 0;
+                                this.style.transform = 'translateX(-100vw)';
                             },
                             play: function() {
-                                this.style.opacity = 1;
-                                this.style.animationName = 'onvisible-slide-right';
-                                this.style.animationTimingFunction = 'ease';
-                                this.style.animationDuration = 'var(--onvisible-speed)';
-                                this.style.animationDelay = 'var(--onvisible-delay)';
+                                this.style.transform = 'none';
                             },
                         },
                         'flip-forward': {
